@@ -15,6 +15,7 @@ module.exports = {
       annotation.title = title;
       await annotation.save();
     }
+
     return res.json(annotation);
   },
 };
