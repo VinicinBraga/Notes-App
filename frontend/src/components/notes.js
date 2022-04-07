@@ -9,7 +9,7 @@ export default function notes() {
           <strong>Fazer Compras</strong>
           <div>x</div>
         </div>
-        <textarea> bla bla bla bla bla bla </textarea>
+        <textarea defaultValue="bla bla bla bla bla bla"></textarea>
         <span>!</span>
       </li>
     </>
