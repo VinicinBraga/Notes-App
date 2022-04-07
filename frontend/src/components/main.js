@@ -8,6 +8,11 @@ export default function main() {
       <main>
         <ul>
           <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
+          <Notes />
         </ul>
       </main>
     </>
