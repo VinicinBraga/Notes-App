@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from "./services/api";
+
 import "./global.css";
 import "./app.css";
 
@@ -6,10 +8,40 @@ import Aside from "./components/aside";
 import Main from "./components/main";
 
 function App() {
+  const [title, setTitle] = useState("");
+  const [notes, setNotes] = useState("");
+  const [allNotes, setAllNotes] = useState([]);
+
+  useEffect(() => {
+    async function getAllNotes() {
+      const response = await api.get("/annotations");
+      setAllNotes(response.data);
+    }
+    getAllNotes();
+  }, []);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const response = await api.post("/annotations", {
+      title,
+      notes,
+      priority: false,
+    });
+    setTitle("");
+    setNotes("");
+    setAllNotes([...allNotes, response.data]);
+  }
+
   return (
     <div id="app">
-      <Aside />
-      <Main />
+      <Aside
+        title={title}
+        setTitle={setTitle}
+        notes={notes}
+        setNotes={setNotes}
+        handleSubmit={handleSubmit}
+      />
+      <Main allNotes={allNotes} />
     </div>
   );
 }

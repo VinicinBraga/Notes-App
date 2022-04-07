@@ -1,20 +1,34 @@
 import React from "react";
 import "./aside.css";
 
-export default function Aside() {
+export default function Aside({
+  title,
+  setTitle,
+  notes,
+  setNotes,
+  handleSubmit,
+}) {
   return (
     <>
       <aside>
         <strong>Caderno de Notas</strong>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="input-block">
             <label htmlFor="title">Titulo da anotação</label>
-            <input />
+            <input
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
           </div>
 
           <div className="input-block">
             <label htmlFor="nota">Anotações</label>
-            <textarea></textarea>
+            <textarea
+              required
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+            />
           </div>
           <button type="submit">Salvar</button>
         </form>
