@@ -30,7 +30,9 @@ export default function Aside({
               onChange={(e) => setNotes(e.target.value)}
             />
           </div>
-          <button type="submit">Salvar</button>
+          <button id="btn_submit" type="submit">
+            Salvar
+          </button>
         </form>
       </aside>
     </>
