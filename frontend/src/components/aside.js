@@ -1,5 +1,6 @@
 import React from "react";
 import "./aside.css";
+import RadioButtons from "./radioButton";
 
 export default function Aside({
   title,
@@ -34,6 +35,7 @@ export default function Aside({
             Salvar
           </button>
         </form>
+        <RadioButtons />
       </aside>
     </>
   );
