@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./aside.css";
 import RadioButtons from "./radioButton";
 
@@ -9,6 +9,17 @@ export default function Aside({
   setNotes,
   handleSubmit,
 }) {
+  useEffect(() => {
+    function enebleSubmitButton() {
+      let btn = document.getElementById("btn_submit");
+      btn.style.background = "#ffd3ca";
+      if (title && notes) {
+        btn.style.background = "#eb8f7a";
+      }
+    }
+    enebleSubmitButton();
+  }, [title, notes]);
+
   return (
     <>
       <aside>

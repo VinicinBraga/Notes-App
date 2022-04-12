@@ -1,5 +1,6 @@
 import * as React from "react";
 import Radio from "@mui/material/Radio";
+import "./radioButton.css";
 
 export default function ColorRadioButtons() {
   const [selectedValue, setSelectedValue] = React.useState("a");
@@ -17,7 +18,7 @@ export default function ColorRadioButtons() {
   });
 
   return (
-    <div>
+    <div className="radioOptions">
       <Radio
         {...controlProps("a")}
         sx={{
@@ -28,6 +29,26 @@ export default function ColorRadioButtons() {
         }}
       />
       <span>Todos</span>
+      <Radio
+        {...controlProps("b")}
+        sx={{
+          color: "#ffd3ca",
+          "&.Mui-checked": {
+            color: "#eb8f7a",
+          },
+        }}
+      />
+      <span>Prioridade</span>
+      <Radio
+        {...controlProps("c")}
+        sx={{
+          color: "#ffd3ca",
+          "&.Mui-checked": {
+            color: "#eb8f7a",
+          },
+        }}
+      />
+      <span>Normal</span>
     </div>
   );
 }

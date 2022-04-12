@@ -32,17 +32,6 @@ function App() {
     setAllNotes([...allNotes, response.data]);
   }
 
-  useEffect(() => {
-    function enebleSubmitButton() {
-      let btn = document.getElementById("btn_submit");
-      btn.style.background = "#ffd3ca";
-      if (title && notes) {
-        btn.style.background = "#eb8f7a";
-      }
-    }
-    enebleSubmitButton();
-  }, [title, notes]);
-
   return (
     <div id="app">
       <Aside
