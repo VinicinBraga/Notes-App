@@ -22,9 +22,9 @@ export default function ColorRadioButtons() {
       <Radio
         {...controlProps("a")}
         sx={{
-          color: "#ffd3ca",
+          color: "#ade5ff",
           "&.Mui-checked": {
-            color: "#eb8f7a",
+            color: "#09b1ff",
           },
         }}
       />
@@ -32,9 +32,9 @@ export default function ColorRadioButtons() {
       <Radio
         {...controlProps("b")}
         sx={{
-          color: "#ffd3ca",
+          color: "#ade5ff",
           "&.Mui-checked": {
-            color: "#eb8f7a",
+            color: "#09b1ff",
           },
         }}
       />
@@ -42,9 +42,9 @@ export default function ColorRadioButtons() {
       <Radio
         {...controlProps("c")}
         sx={{
-          color: "#ffd3ca",
+          color: "#ade5ff",
           "&.Mui-checked": {
-            color: "#eb8f7a",
+            color: "#09b1ff",
           },
         }}
       />

@@ -12,9 +12,9 @@ export default function Aside({
   useEffect(() => {
     function enebleSubmitButton() {
       let btn = document.getElementById("btn_submit");
-      btn.style.background = "#ffd3ca";
+      btn.style.background = "#ade5ff";
       if (title && notes) {
-        btn.style.background = "#eb8f7a";
+        btn.style.background = "#09b1ff";
       }
     }
     enebleSubmitButton();
