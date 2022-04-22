@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { AiTwotoneDelete, AiOutlineExclamationCircle } from "react-icons/ai";
 import "./notes.css";
 import "./notes-priority.css";
+import api from "../services/api";
 
-import { AiTwotoneDelete, AiOutlineExclamationCircle } from "react-icons/ai";
+export default function Notes({ data }) {
+  const [changedNote, setChangedNote] = useState("");
 
-export default function notes({ data }) {
+  async function handleChangedNote(e, notes) {
+    if (changedNote && changedNote !== notes) {
+      await api.post(`/contents/${data._id}`, {
+        notes: changedNote,
+      });
+    }
+  }
   return (
     <>
       <li
@@ -16,7 +25,11 @@ export default function notes({ data }) {
             <AiTwotoneDelete size="20" />
           </div>
         </div>
-        <textarea defaultValue={data.notes}></textarea>
+        <textarea
+          defaultValue={data.notes}
+          onChange={(e) => setChangedNote(e.target.value)}
+          onBlur={(e) => handleChangedNote(e.target, data.notes)}
+        />
         <span>
           <AiOutlineExclamationCircle size="20" />
         </span>
