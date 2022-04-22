@@ -1,12 +1,15 @@
 import React from "react";
 import "./notes.css";
+import "./notes-priority.css";
 
 import { AiTwotoneDelete, AiOutlineExclamationCircle } from "react-icons/ai";
 
 export default function notes({ data }) {
   return (
     <>
-      <li className="notepad-infos">
+      <li
+        className={data.priority ? "notepad-infos-priority" : "notepad-infos"}
+      >
         <div>
           <strong>{data.title}</strong>
           <div>

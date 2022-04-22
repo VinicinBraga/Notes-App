@@ -12,7 +12,7 @@ export default function Aside({
   useEffect(() => {
     function enebleSubmitButton() {
       let btn = document.getElementById("btn_submit");
-      btn.style.background = "#ade5ff";
+      btn.style.background = "#c1e6ff";
       if (title && notes) {
         btn.style.background = "#09b1ff";
       }
@@ -29,6 +29,7 @@ export default function Aside({
             <label htmlFor="title">Titulo da anotação</label>
             <input
               required
+              maxLength="30"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />

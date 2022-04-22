@@ -1,51 +1,51 @@
-li.notepad-infos div {
+li.notepad-infos-priority div {
   display: flex;
   justify-content: space-between;
 }
 
-li.notepad-infos {
-  background: #fff;
+li.notepad-infos-priority {
+  background: #09b1ff;
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 20px 20px 10px 20px;
 }
 
-li.notepad-infos strong {
+li.notepad-infos-priority strong {
   display: block;
   font-size: 16px;
   color: #333;
 }
 
-li.notepad-infos div div {
+li.notepad-infos-priority div div {
   color: #c1e6ff;
   cursor: pointer;
 }
 
-li.notepad-infos div div:hover {
-  color: #09b1ff;
+li.notepad-infos-priority div div:hover {
+  color: #006999;
   transition: 0.2s;
 }
 
-li.notepad-infos textarea {
+li.notepad-infos-priority textarea {
   padding: 7px;
   margin-top: 7px;
   margin-bottom: 5px;
   width: 100%;
   height: 130px;
   font-size: 14px;
-  color: rgb(54, 54, 54);
+  color: #333;
   border: 0;
-  background: #fff;
+  background: #09b1ff;
   resize: none;
 }
-li.notepad-infos textarea:hover {
+li.notepad-infos-priority textarea:hover {
   cursor: default;
 }
-li.notepad-infos span {
+li.notepad-infos-priority span {
   color: #c1e6ff;
   cursor: pointer;
 }
-li.notepad-infos span:hover {
-  color: #09b1ff;
+li.notepad-infos-priority span:hover {
+  color: #006999;
   transition: 0.2s;
 }
