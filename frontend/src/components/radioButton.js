@@ -20,6 +20,7 @@ export default function ColorRadioButtons() {
   return (
     <div className="radioOptions">
       <Radio
+        checked={selectedValue === "all"}
         {...controlProps("a")}
         sx={{
           color: "#dadada",
@@ -30,6 +31,7 @@ export default function ColorRadioButtons() {
       />
       <span>Todos</span>
       <Radio
+        checked={selectedValue === "true"}
         {...controlProps("b")}
         sx={{
           color: "#dadada",
@@ -40,6 +42,7 @@ export default function ColorRadioButtons() {
       />
       <span>Prioridade</span>
       <Radio
+        checked={selectedValue === "false"}
         {...controlProps("c")}
         sx={{
           color: "#dadada",

@@ -4,7 +4,7 @@ import "./notes.css";
 import "./notes-priority.css";
 import api from "../services/api";
 
-export default function Notes({ data, handleDelete }) {
+export default function Notes({ data, handleDelete, handlePriority }) {
   const [changedNote, setChangedNote] = useState("");
 
   async function handleEdit(e, priority) {
@@ -46,7 +46,10 @@ export default function Notes({ data, handleDelete }) {
           onBlur={(e) => handleChangedNote(e.target, data.notes)}
         />
         <span>
-          <AiOutlineExclamationCircle size="20" />
+          <AiOutlineExclamationCircle
+            size="20"
+            onClick={() => handlePriority(data._id)}
+          />
         </span>
       </li>
     </>

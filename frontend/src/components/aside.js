@@ -8,6 +8,8 @@ export default function Aside({
   notes,
   setNotes,
   handleSubmit,
+  selectedValue,
+  handleChange,
 }) {
   useEffect(() => {
     function enebleSubmitButton() {
@@ -47,7 +49,10 @@ export default function Aside({
             Salvar
           </button>
         </form>
-        <RadioButtons />
+        <RadioButtons
+          handleChange={handleChange}
+          selectedValue={selectedValue}
+        />
       </aside>
     </>
   );
