@@ -2,7 +2,7 @@ import React from "react";
 import Notes from "../components/notes";
 import "./main.css";
 
-export default function main({ allNotes, handleDelete, handlePriority }) {
+export default function Main({ allNotes, handleDelete, handlePriority }) {
   return (
     <>
       <main>

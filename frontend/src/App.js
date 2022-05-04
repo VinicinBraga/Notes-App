@@ -8,7 +8,7 @@ import Aside from "./components/aside";
 import Main from "./components/main";
 
 function App() {
-  const [selectedValue, setSelectedValue] = useState("all");
+  const [selecteditemValue, setSelecteditemValue] = useState("all");
   const [title, setTitle] = useState("");
   const [notes, setNotes] = useState("");
   const [allNotes, setAllNotes] = useState([]);
@@ -31,8 +31,8 @@ function App() {
     }
   }
 
-  function handleChange(e) {
-    setSelectedValue(e.value);
+  function handleItemChange(e) {
+    setSelecteditemValue(e.value);
     if (e.checked && e.value !== "all") {
       loadNotes(e.value);
     } else {
@@ -74,8 +74,8 @@ function App() {
         notes={notes}
         setNotes={setNotes}
         handleSubmit={handleSubmit}
-        selectedValue={selectedValue}
-        handleChange={handleChange}
+        selecteditemValue={selecteditemValue}
+        handleItemChange={handleItemChange}
       />
       <Main
         allNotes={allNotes}

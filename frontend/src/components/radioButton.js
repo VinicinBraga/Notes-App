@@ -1,55 +1,25 @@
 import * as React from "react";
-import Radio from "@mui/material/Radio";
 import "./radioButton.css";
 
-export default function ColorRadioButtons() {
-  const [selectedValue, setSelectedValue] = React.useState("a");
-
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
-
-  const controlProps = (item) => ({
-    checked: selectedValue === item,
-    onChange: handleChange,
-    value: item,
-    name: "color-radio-button-demo",
-    inputProps: { "aria-label": item },
-  });
-
+export default function RadioButtons({ handleItemChange, selecteditemValue }) {
   return (
     <div className="radioOptions">
-      <Radio
-        checked={selectedValue === "all"}
-        {...controlProps("a")}
-        sx={{
-          color: "#dadada",
-          "&.Mui-checked": {
-            color: "#09b1ff",
-          },
-        }}
+      <input
+        type="radio"
+        checked={selecteditemValue === "all"}
+        onChange={(e) => handleItemChange(e._id)}
       />
       <span>Todos</span>
-      <Radio
-        checked={selectedValue === "true"}
-        {...controlProps("b")}
-        sx={{
-          color: "#dadada",
-          "&.Mui-checked": {
-            color: "#09b1ff",
-          },
-        }}
+      <input
+        type="radio"
+        checked={selecteditemValue === "true"}
+        onChange={(e) => handleItemChange(e._id)}
       />
       <span>Prioridade</span>
-      <Radio
-        checked={selectedValue === "false"}
-        {...controlProps("c")}
-        sx={{
-          color: "#dadada",
-          "&.Mui-checked": {
-            color: "#09b1ff",
-          },
-        }}
+      <input
+        type="radio"
+        checked={selecteditemValue === "false"}
+        onChange={(e) => handleItemChange(e._id)}
       />
       <span>Normal</span>
     </div>
